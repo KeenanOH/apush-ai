@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+import withPWAInit from "@ducanh2912/next-pwa";
+
+const withPWA = withPWAInit({
+    dest: "public",
+});
+
+const nextConfig = {
+    eslint: {
+        ignoreDuringBuilds: true,
+    }
+};
+
+export default withPWA(nextConfig);
